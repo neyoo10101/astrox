@@ -1,44 +1,28 @@
 document.addEventListener('DOMContentLoaded', function () {
   const form = document.getElementById('contactForm');
-  const statusDiv = document.getElementById('formStatus');
+  const status = document.getElementById('formStatus');
 
   form.addEventListener('submit', function (e) {
-    e.preventDefault(); // Prevent page reload
-
-    const email = document.getElementById('email').value.trim();
-    const phone = document.getElementById('phone').value.trim();
-    const website = document.getElementById('website').value.trim();
-
-    // Basic front-end validation
-    if (!email || !phone || !website) {
-      statusDiv.textContent = 'Please fill in all required fields.';
-      statusDiv.style.color = 'red';
-      return;
-    }
+    e.preventDefault(); // Prevent the default form submission
 
     const formData = new FormData(form);
+    const action = form.action;
 
-    fetch(form.action, {
+    fetch(action, {
       method: 'POST',
       body: formData,
     })
-      .then((response) => response.text()) // <-- Read response as text
-      .then((text) => {
-        console.log("Server response:", text); // Optional: for debugging
-
-        if (text.trim() === 'Success') {
-          statusDiv.textContent = 'Form submitted successfully!';
-          statusDiv.style.color = 'green';
+      .then(response => {
+        if (response.ok) {
+          status.innerHTML = '<p style="color:green;">Thank you! Your form has been submitted.</p>';
           form.reset();
         } else {
-          statusDiv.textContent = 'There was a problem submitting the form.';
-          statusDiv.style.color = 'red';
+          status.innerHTML = '<p style="color:red;">Oops! There was a problem submitting the form.</p>';
         }
       })
-      .catch((error) => {
-        console.error('Error:', error);
-        statusDiv.textContent = 'An error occurred. Please try again later.';
-        statusDiv.style.color = 'red';
+      .catch(error => {
+        console.error('Error!', error.message);
+        status.innerHTML = '<p style="color:red;">Something went wrong. Please try again later.</p>';
       });
   });
 });
