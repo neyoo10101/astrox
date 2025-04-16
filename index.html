@@ -494,50 +494,54 @@
             <p>Get Started Today! Join 1000+ businesses using <strong>Astrox Softech</strong> for hassle-free payouts. </p>
             <p><strong>Sign up now</strong> and simplify your payment processes!</p>
                        <!-- contant us form -->
+<div class="contact_form">
+  <form
+    id="contactForm"
+    action="https://script.google.com/macros/s/AKfycbyVxeTHdZVkD8hojUyolJnqTbUU_QtZ3GWIsWltsOrdqMLBn-K5yJ82PbtTELhVnScn/exec"
+    method="POST"
+  >
+    <div class="form-group">
+      <label for="email">Email:</label>
+      <input
+        type="email"
+        id="email"
+        name="email"
+        class="form-control"
+        placeholder="Enter your email"
+        required
+      />
+    </div>
+    <div class="form-group">
+      <label for="phone">Phone:</label>
+      <input
+        type="tel"
+        id="phone"
+        name="phone"
+        class="form-control"
+        placeholder="Enter your phone number"
+        required
+      />
+    </div>
+    <div class="form-group">
+      <label for="website">Website URL:</label>
+      <input
+        type="url"
+        id="website"
+        name="website"
+        class="form-control"
+        placeholder="Enter your website URL"
+        required
+      />
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+    <div id="formStatus" style="margin-top: 10px;"></div>
+  </form>
+</div>
 
-            <div class="contact_form">
-        	<form id="contactForm" action="https://script.google.com/macros/s/AKfycbyVxeTHdZVkD8hojUyolJnqTbUU_QtZ3GWIsWltsOrdqMLBn-K5yJ82PbtTELhVnScn/exec"
-                method="POST">
-                <div class="form-group">
-                  <label for="email">Email:</label>
-                  <input
-                    type="email"
-                    id="email"
-                    name="email"
-                    class="form-control"
-                    placeholder="Enter your email"
-                    required
-                  />
-                </div>
-                <div class="form-group">
-                  <label for="phone">Phone:</label>
-                  <input
-                    type="tel"
-                    id="phone"
-                    name="phone"
-                    class="form-control"
-                    placeholder="Enter your phone number"
-                    required
-                  />
-                </div>
-                <div class="form-group">
-                  <label for="website">Website URL:</label>
-                  <input
-                    type="url"
-                    id="website"
-                    name="website"
-                    class="form-control"
-                    placeholder="Enter your website URL"
-                    required
-                  />
-                </div>
-                <button type="submit" class="btn btn-primary">Submit</button>
-                <div id="formStatus" style="margin-top: 10px;"></div>
-              </form>
-            </div>
-            <!-- Link your external JS file here -->
-            <script src="/js/form-handler.js"></script>
-          </div>
+<!-- ✅ Make sure this path is correct -->
+<script src="/js/form-handler.js"></script>
+
+            
         </section>
 
         <!-- end about section -->
