@@ -135,7 +135,7 @@ a:focus {
 }
 
 .header_section {
-  padding: 15px 0;
+  padding: 5px 0;
   display: flex;
   position: sticky;
   top: 0;
