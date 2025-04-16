@@ -23,7 +23,7 @@ document.addEventListener('DOMContentLoaded', function () {
         body: formData,
       })
         .then((response) => {
-          if (response.ok) {
+          if (response.Success) {
             statusDiv.textContent = 'Form submitted successfully!';
             statusDiv.style.color = 'green';
             form.reset();
