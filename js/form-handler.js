@@ -38,6 +38,4 @@ document.addEventListener('DOMContentLoaded', function () {
           statusDiv.style.color = 'red';
         });
     });
-  });
-var sheet = SpreadsheetApp.getActiveSpreadsheet().getSheetByName("ContantUsData");
-  
+  });  
